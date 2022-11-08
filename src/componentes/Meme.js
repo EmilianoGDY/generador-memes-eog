@@ -23,12 +23,12 @@ const Meme = () => {
     );
   };
 
-  const skipMeme = ()=>{
+  const skipearMeme = ()=>{
     setMemeIndex(memeIndex + 1);
     setMemeGenerado({url:'', bandera:false})
   }
 
-  const generateMeme = () => {
+  const generarMeme = () => {
     const currentMeme = memes[memeIndex];
     const formData = new FormData();
 
@@ -48,7 +48,7 @@ const Meme = () => {
     });
   };
 
-  const shuffleMemes = (array) => {
+  const memeRandom = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * i);
       const temp = array[i];
@@ -62,7 +62,7 @@ const Meme = () => {
       res.json().then(res => {
         console.log(res);
         const _memes = res.data.memes;
-        shuffleMemes(_memes);
+        memeRandom(_memes);
         setMemes(_memes);
       });
     });
@@ -77,8 +77,8 @@ const Meme = () => {
   return(
     memes.length ? 
     <div className="container">
-      <button onClick={generateMeme} className="generate">Generate</button>
-      <button onClick={skipMeme} className="skip">Skip</button>
+      <button onClick={skipearMeme} className="skip">Otro Meme</button>
+      <button onClick={generarMeme} className="generate">Generar Meme</button>
       {
         captions.map((c, index) => (
           <input onChange={(e) => updateCaption(e, index)} key={index} />
