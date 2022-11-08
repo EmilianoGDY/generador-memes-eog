@@ -1,9 +1,12 @@
 import Meme from './componentes/Meme';
 import './App.css';
 
-function App() {
+function App() {  
   return(
-     <Meme/>
+      <div>
+        <h1>Bienvenido al Generador de Memes</h1>
+        <Meme/>
+      </div>
   );
 }
 

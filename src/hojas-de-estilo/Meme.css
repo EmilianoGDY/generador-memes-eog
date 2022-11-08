@@ -9,3 +9,14 @@
 .generate{
     background-color: #0275d8;
 }
+
+.link-meme{
+    margin: 50px 0 30px 0 ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 30px;
+}
